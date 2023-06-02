@@ -37,7 +37,7 @@ jobs:
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
         brew --version
         brew install phrase-cli
-        phrase --version
+        ls ~/.usr/bin/
 
     - name: Make changes
       run: |
