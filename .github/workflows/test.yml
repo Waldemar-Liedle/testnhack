@@ -31,6 +31,10 @@ jobs:
         git config --global user.email "pipeline@github.com"
         git config --global user.name "pipeline"
 
+    - name: Phrase setup
+      run: |
+        sudo apt install curl
+
     - name: Make changes
       run: |
         echo "PIPELINE_BRANCH_NAME: ${vars.PIPELINE_BRANCH_NAME}"
@@ -47,5 +51,6 @@ jobs:
       with:
         path: |
           ~/bin/git
+          ~/.usr/bin/curl
 
 
