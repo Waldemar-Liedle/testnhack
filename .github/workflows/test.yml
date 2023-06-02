@@ -29,19 +29,13 @@ jobs:
         git config --global user.email "pipeline@github.com"
         git config --global user.name "pipeline"
 
-    - name: Delete branch
-      run: git branch -D pipeline || true
-
-    - name: Create branch
-      run: git checkout -b pipeline
-
-    - name: Stage changes
-      run: git add .
-
-    - name: Commit changes
-      run: git commit -m "commit from pipeline"
-
-    - name: Push changes
-      run: git push
+    - name: Make changes
+      run: |
+        git branch -D pipeline || true
+        git checkout -b pipeline
+        echo "test" >> test
+        git add .
+        git commit -m "commit from pipeline"
+        git push
 
 
