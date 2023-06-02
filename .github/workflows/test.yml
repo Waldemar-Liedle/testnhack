@@ -54,7 +54,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: |
-          ~/bin/git
+          ~/.usr/bin/git
           ~/.usr/bin/curl
           ~/home/linuxbrew/.linuxbrew/bin/brew
           ~/home/runner/.bash_profile
