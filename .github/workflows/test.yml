@@ -45,7 +45,7 @@ jobs:
         echo $PIPELINE_BRANCH_NAME
         git branch -D $PIPELINE_BRANCH_NAME || true
         git checkout -b $PIPELINE_BRANCH_NAME
-        git fetch $PIPELINE_BRANCH_NAME || true
+        git fetch || true
         git pull || true
         echo "test" >> test
         git add .
