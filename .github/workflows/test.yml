@@ -9,6 +9,9 @@ on:
 permissions:
   contents: read
 
+env:
+  BRANCH_NAME: pipeline
+
 jobs:
   build:
 
@@ -32,10 +35,10 @@ jobs:
     - name: Make changes
       run: |
         git branch -D pipeline || true
-        git checkout -b pipeline
+        git checkout -b $BRANCH_NAME
         echo "test" >> test
         git add .
         git commit -m "commit from pipeline"
-        git push
+        git push --set-upstream origin $BRANCH_NAME
 
 
