@@ -22,23 +22,18 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Git setup
+    - name: Setup Git, cUrl, Brew, Phrase
       run: |
         lsb_release -a
-        sudo apt install git
+        sudo apt-get install git
         git --version
         which git
         git config --global user.email "pipeline@github.com"
         git config --global user.name "pipeline"
-
-    - name: Phrase setup
-      run: |
-        sudo apt install curl
+        sudo apt-get install curl
         curl --version
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         brew --version
-        brew install phrase-cli
-        phrase-cli --version
 
     - name: Make changes
       run: |
