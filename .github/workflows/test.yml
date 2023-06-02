@@ -16,6 +16,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
+    - name: Show OS info
+      run: lsb_release -a
 
     - name: Install Git
       run: sudo apt install git
@@ -23,7 +26,17 @@ jobs:
     - name: Show Git info
       run: git --version
 
+    - name: Delete branch
+      run: git branch -D pipeline
+
     - name: Create branch
       run: git checkout -b pipeline
 
+    - name: Stage changes
+      run: git add .
 
+    - name: Commit changes
+      run: git commit -m "commit from pipeline"
+
+    - name: Push changes
+      run: git push
