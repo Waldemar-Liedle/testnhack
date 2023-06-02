@@ -38,13 +38,13 @@ jobs:
 
     - name: Make changes
       run: |
-        echo ${env.PIPELINE_BRANCH_NAME}
+        echo $env.PIPELINE_BRANCH_NAME
         git branch -D pipeline || true
-        git checkout -b ${env.PIPELINE_BRANCH_NAME}
+        git checkout -b $env.PIPELINE_BRANCH_NAME
         echo "test" >> test
         git add .
         git commit -m "commit from pipeline"
-        git push --set-upstream origin ${env.PIPELINE_BRANCH_NAME}
+        git push --set-upstream origin $env.PIPELINE_BRANCH_NAME
 
     - name: Cache dependencies
       uses: actions/cache@v3
