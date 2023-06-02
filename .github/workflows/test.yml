@@ -46,7 +46,7 @@ jobs:
         git branch -D $PIPELINE_BRANCH_NAME || true
         git checkout -b $PIPELINE_BRANCH_NAME
         git fetch || true
-        git pull || true
+        git pull $PIPELINE_BRANCH_NAME $PIPELINE_BRANCH_NAME || true
         echo "test" >> test
         git add .
         git commit -m "commit from pipeline"
