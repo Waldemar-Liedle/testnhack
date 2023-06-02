@@ -24,6 +24,6 @@ jobs:
       run: git --version
 
     - name: Create branch
-      run: git checkout -b $(date + ci%Y%m%d%H%M%S)
+      run: git checkout -b date +pipeline_%F_%T
 
 
