@@ -34,6 +34,7 @@ jobs:
         curl --version
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         brew --version
+        ls /usr/bin
 
     - name: Make changes
       run: |
