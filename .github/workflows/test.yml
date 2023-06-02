@@ -34,8 +34,6 @@ jobs:
     - name: Make changes
       run: |
         echo "${{vars}}"
-        echo "${{vars[PIPELINE_BRANCH_NAME]}}"
-        echo "${{vars.PIPELINE_BRANCH_NAME}}"
         echo $vars
         echo $vars.PIPELINE_BRANCH_NAME
         echo $vars[PIPELINE_BRANCH_NAME]
