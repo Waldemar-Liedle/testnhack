@@ -22,12 +22,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Cache 
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/bin/git
-
     - name: Git setup
       run: |
         lsb_release -a
@@ -45,5 +39,11 @@ jobs:
         git add .
         git commit -m "commit from pipeline"
         git push --set-upstream origin $PIPELINE_BRANCH_NAME
+
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/bin/git
 
 
