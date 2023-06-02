@@ -24,6 +24,6 @@ jobs:
       run: apk info git
 
     - name: Create branch
-      run: 
+      run: git checkout -b $(date + ci%Y%m%d%H%M%S)
 
 
