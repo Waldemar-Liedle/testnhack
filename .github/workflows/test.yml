@@ -44,8 +44,9 @@ jobs:
       run: |
         echo $PIPELINE_BRANCH_NAME
         git branch -D $PIPELINE_BRANCH_NAME || true
-        git push origin --delete $PIPELINE_BRANCH_NAME || true
         git checkout -b $PIPELINE_BRANCH_NAME
+        git fetch $PIPELINE_BRANCH_NAME || true
+        git pull || true
         echo "test" >> test
         git add .
         git commit -m "commit from pipeline"
