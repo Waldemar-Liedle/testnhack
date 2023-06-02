@@ -33,6 +33,9 @@ jobs:
         sudo apt-get install curl
         curl --version
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        /home/linuxbrew/.linuxbrew/bin --version
+        export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH
+        brew --version
         ls /usr/bin
 
     - name: Make changes
