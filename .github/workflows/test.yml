@@ -35,6 +35,7 @@ jobs:
       run: |
         echo "${{vars}}"
         echo $vars
+        echo $PIPELINE_BRANCH_NAME
         echo $vars.PIPELINE_BRANCH_NAME
         echo $vars[PIPELINE_BRANCH_NAME]
         git branch -D pipeline || true
