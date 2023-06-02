@@ -20,14 +20,14 @@ jobs:
     - run: echo 111
     - run: echo 222
 
-    - name: Pipeline test
-      run: lsb_release -a
-
-    - name: Install Git
+    - name: Git setup
       run: |
+        lsb_release -a
         sudo apt install git
         git --version
         which git
+        git config --global user.email "pipeline@github.com"
+        git config --global user.name "pipeline"
 
     - name: Delete branch
       run: git branch -D pipeline || true
