@@ -55,7 +55,7 @@ jobs:
         path: |
           ~/bin/git
           ~/.usr/bin/curl
-          ~/.usr/bin/brew
+          ~/home/linuxbrew/.linuxbrew/bin/brew
           ~/.usr/bin/phrase-cli
 
 
