@@ -57,7 +57,7 @@ jobs:
           ~/.usr/bin/git
           ~/.usr/bin/curl
           ~/home/linuxbrew/.linuxbrew/bin/brew
+          ~/home/linuxbrew/.linuxbrew/Cellar/phrase-cli
           ~/home/runner/.bash_profile
-          ~/.usr/bin/phrase-cli
 
 
