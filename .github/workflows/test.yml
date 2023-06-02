@@ -33,7 +33,11 @@ jobs:
         sudo apt-get install curl
         curl --version
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        ls /usr/linuxbrew/.linuxbrew/bin
+        (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bash_profile
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        brew --version
+        brew install phrase-cli
+        phrase --version
 
     - name: Make changes
       run: |
