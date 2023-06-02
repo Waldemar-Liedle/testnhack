@@ -17,11 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Cache dependencies
-      uses: actions/cache@v3
-      with:
-        path: usr/bin/git
-
     - run: echo 111
     - run: echo 222
 
@@ -32,6 +27,7 @@ jobs:
       run: |
         sudo apt install git
         git --version
+        which git
 
     - name: Delete branch
       run: git branch -D pipeline || true
