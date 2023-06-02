@@ -12,16 +12,16 @@ permissions:
 jobs:
   build:
 
-    runs-on: phrase/phrase-cli:latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
 
     - name: Install Git
-      run: apk add git
+      run: sudo apt install git
     
     - name: Show Git info
-      run: apk info git
+      run: git --version
 
     - name: Create branch
       run: git checkout -b $(date + ci%Y%m%d%H%M%S)
