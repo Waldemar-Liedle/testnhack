@@ -27,7 +27,7 @@ jobs:
       run: git --version
 
     - name: Delete branch
-      run: git branch -D pipeline
+      run: git branch -D pipeline || true
 
     - name: Create branch
       run: git checkout -b pipeline
