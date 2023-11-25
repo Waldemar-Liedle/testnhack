@@ -26,19 +26,19 @@ jobs:
         PHRASE_ACCESS_TOKEN: ${{ secrets.PHRASE_ACCESS_TOKEN }}
         PHRASE_PROJECT_ID: ${{ secrets.PHRASE_PROJECT_ID }}
       run: |
-        echo "phrase:" >> phrase.yml
-        echo "  access_token: ${PHRASE_ACCESS_TOKEN}" >> phrase.yml
-        echo "  project_id: ${PHRASE_PROJECT_ID}" >> phrase.yml
-        echo "  pull:" >> phrase.yml
-        echo "    targets:" >> phrase.yml
-        echo "    - file: ./<locale_name>.json" >> phrase.yml
-        echo "      params:" >> phrase.yml
-        echo "        file_format: react_simple_json" >> phrase.yml
-        echo "        include_empty_translations: true" >> phrase.yml
-        echo "        fallback_locale_id: en-GB" >> phrase.yml
-        echo "        include_unverified_translations: true" >> phrase.yml
-        echo "        encoding: UTF-8" >> phrase.yml
-        cat phrase.yml
+        echo "phrase:" >> .phrase.yml
+        echo "  access_token: ${PHRASE_ACCESS_TOKEN}" >> .phrase.yml
+        echo "  project_id: ${PHRASE_PROJECT_ID}" >> .phrase.yml
+        echo "  pull:" >> .phrase.yml
+        echo "    targets:" >> .phrase.yml
+        echo "    - file: ./<locale_name>.json" >> .phrase.yml
+        echo "      params:" >> .phrase.yml
+        echo "        file_format: react_simple_json" >> .phrase.yml
+        echo "        include_empty_translations: true" >> .phrase.yml
+        echo "        fallback_locale_id: en-GB" >> .phrase.yml
+        echo "        include_unverified_translations: true" >> .phrase.yml
+        echo "        encoding: UTF-8" >> .phrase.yml
+        cat .phrase.yml
         lsb_release -a
         sudo apt-get install git
         git --version
