@@ -45,10 +45,13 @@ jobs:
         echo $PIPELINE_BRANCH_NAME
         git branch -D $PIPELINE_BRANCH_NAME || true
         git checkout -b $PIPELINE_BRANCH_NAME
-        echo "test222" >> test
+        echo "test333" >> test
         git add .
         git commit -m "commit from pipeline"
         git push --set-upstream origin $PIPELINE_BRANCH_NAME --force
+        git checkout -b test
+        git merge $PIPELINE_BRANCH_NAME
+        git push
 
     - name: Cache dependencies
       uses: actions/cache@v3
