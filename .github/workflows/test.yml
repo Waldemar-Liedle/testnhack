@@ -26,8 +26,8 @@ jobs:
         PHRASE_ACCESS_TOKEN: ${{ secrets.PHRASE_ACCESS_TOKEN }}
         PHRASE_PROJECT_ID: ${{ secrets.PHRASE_PROJECT_ID }}
       run: |
-        sed -r 's/^(\s*)(image\s*:\s*<<<ACCESS_TOKEN>>>\s*$)/\1image: ${PHRASE_ACCESS_TOKEN}/' phrase.yml
-        sed -r 's/^(\s*)(image\s*:\s*<<<PROJECT_ID>>>\s*$)/\1image: ${PHRASE_PROJECT_ID}/' phrase.yml
+        sed -r 's/^(\s*)(image\s*:\s*<<<ACCESS_TOKEN>>>\s*$)/\1image: "$PHRASE_ACCESS_TOKEN"/' phrase.yml
+        sed -r 's/^(\s*)(image\s*:\s*<<<PROJECT_ID>>>\s*$)/\1image: "$PHRASE_PROJECT_ID"/' phrase.yml
         cat phrase.yaml
         lsb_release -a
         sudo apt-get install git
