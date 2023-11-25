@@ -1,6 +1,6 @@
 phrase:
-  access_token: "$PHRASE_ACCESS_TOKEN"
-  project_id: "$PHRASE_PROJECT_ID"
+  access_token: ${PHRASE_ACCESS_TOKEN}
+  project_id: ${PHRASE_PROJECT_ID}
   pull:
     targets:
     - file: ./<locale_name>.json
