@@ -45,7 +45,7 @@ jobs:
         echo $PIPELINE_BRANCH_NAME
         git branch -D $PIPELINE_BRANCH_NAME || true
         git checkout -b $PIPELINE_BRANCH_NAME
-        echo "test333" >> test
+        echo "test444" >> test
         git add .
         git commit -m "commit from pipeline"
         git push --set-upstream origin $PIPELINE_BRANCH_NAME --force
