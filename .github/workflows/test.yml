@@ -42,6 +42,8 @@ jobs:
 
     - name: Make changes
       run: |
+        echo 'Phrase version is:'
+        phrase version
         echo $PIPELINE_BRANCH_NAME
         git branch -D $PIPELINE_BRANCH_NAME || true
         git checkout -b $PIPELINE_BRANCH_NAME
