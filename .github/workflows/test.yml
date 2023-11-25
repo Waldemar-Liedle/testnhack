@@ -59,5 +59,11 @@ jobs:
           ~/home/linuxbrew/.linuxbrew/bin/brew
           ~/home/linuxbrew/.linuxbrew/Cellar/phrase-cli
           ~/home/runner/.bash_profile
+        restore-keys: |
+          git
+          curl
+          brew
+          phrase
+          bash
 
 
