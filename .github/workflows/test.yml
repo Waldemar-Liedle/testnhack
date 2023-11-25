@@ -55,6 +55,8 @@ jobs:
 
     - name: Cache dependencies
       uses: actions/cache@v3
+      env:
+        cache-name: cache-git-curl-brew-phrase-profile
       with:
         path: |
           ~/.usr/bin/git
@@ -62,11 +64,7 @@ jobs:
           ~/home/linuxbrew/.linuxbrew/bin/brew
           ~/home/linuxbrew/.linuxbrew/Cellar/phrase-cli
           ~/home/runner/.bash_profile
-        restore-keys: |
-          git
-          curl
-          brew
-          phrase
-          bash
+        key: cache-git-curl-brew-phrase-profile
+        restore-keys: cache-git-curl-brew-phrase-profile
 
 
