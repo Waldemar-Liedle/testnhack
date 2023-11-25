@@ -21,8 +21,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
     - name: Setup Git, cUrl, Brew, Phrase, pull translations
+      env:
+        PHRASE_ACCESS_TOKEN: ${{ secrets.PHRASE_ACCESS_TOKEN }}
+        PHRASE_PROJECT_ID: ${{ secrets.PHRASE_PROJECT_ID }}
       run: |
         lsb_release -a
         sudo apt-get install git
@@ -44,7 +46,7 @@ jobs:
         git checkout -b $PIPELINE_BRANCH_NAME
         phrase pull
         ls
-
+  
     - name: Cache dependencies
       uses: actions/cache@v3
       env:
