@@ -27,7 +27,7 @@ jobs:
         PHRASE_PROJECT_ID: ${{ secrets.PHRASE_PROJECT_ID }}
       run: |
         echo "phrase:" >> phrase.yml
-        echo "  access_token: ${PHRASE_ACCESS_TOKEN}:" >> phrase.yml
+        echo "  access_token: ${PHRASE_ACCESS_TOKEN}" >> phrase.yml
         echo "  project_id: ${PHRASE_PROJECT_ID}" >> phrase.yml
         echo "  pull:" >> phrase.yml
         echo "    targets:" >> phrase.yml
