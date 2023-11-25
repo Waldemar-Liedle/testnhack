@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Setup Git, cUrl, Brew, Phrase
+    - name: Setup Git, cUrl, Brew, Phrase, pull translations
       run: |
         lsb_release -a
         sudo apt-get install git
@@ -39,22 +39,12 @@ jobs:
         brew install phrase-cli
         echo 'Phrase version is:'
         phrase version
-
-    - name: Make changes
-      run: |
-        echo 'Phrase version is:'
-        phrase version
         echo $PIPELINE_BRANCH_NAME
         git branch -D $PIPELINE_BRANCH_NAME || true
         git checkout -b $PIPELINE_BRANCH_NAME
         cd ~/home/linuxbrew/.linuxbrew/Cellar/phrase-cli
         phrase pull
-        git add .
-        git commit -m "commit from pipeline"
-        git push --set-upstream origin $PIPELINE_BRANCH_NAME --force
-        git checkout test
-        git merge $PIPELINE_BRANCH_NAME
-        git push
+        ls
 
     - name: Cache dependencies
       uses: actions/cache@v3
